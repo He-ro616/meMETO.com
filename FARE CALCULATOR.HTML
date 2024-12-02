@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style> .boxes-fare {
+  padding: 1rem;
+  background-color: #fff;
+  margin: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }</style></head>
+<body>
+<div class="boxes fare" style="height: 330px">
+    <a href=""><img alt="LMRCfare info" src="https://lmrcl.com/front-end/img/plus_green.png" class="box_link"></a>
+      <div class="heads" style="background:#129404"> <img alt="LMRCfare info" src="https://lmrcl.com/front-end/img/fare_ico.png"> fare calculator</div>
+    
+     <div class="content">
+     <p style="position: absolute;right:40px; font-size: 12px; color: #ff0000; font-style: italic; display: none;" id="fromError">Please select source station.</p>
+                                   <form action="">
+               <p>From  </p>
+               <div style="width:100%">
+               <span style="background:#339900; width:10px; height:10px; position:absolute; top:110px; left:38px"></span>
+                   
+                   <select name="from" id="from" style="width:100%; padding:10px; padding-left:25px; margin-bottom:15px;">
+                       <option value="" style="display:none;" selected="selected">Select Source *</option>
+                                                                       <option value="6">Alambagh</option>
+                                                                       <option value="7">Alambagh Bus Stand</option>
+                                                                       <option value="2">Amausi Metro</option>
+                                                                       <option value="17">Badshah Nagar</option>
+                                                                       <option value="19">Bhootnath Market</option>
+                                                                       <option value="1">CCS Airport</option>
+                                                                       <option value="10">Charbagh</option>
+                                                                       <option value="9">Durga Puri</option>
+                                                                       <option value="13">Hazratganj</option>
+                                                                       <option value="11">Husainganj</option>
+                                                                       <option value="20">Indira Nagar Metro</option>
+                                                                       <option value="16">IT College</option>
+                                                                       <option value="14">K D Singh Babu Stadium</option>
+                                                                       <option value="4">Krishna Nagar Metro</option>
+                                                                       <option value="18">Lekhraj Market</option>
+                                                                       <option value="8">Mawaiya</option>
+                                                                       <option value="21">Munsipuliya</option>
+                                                                       <option value="12">Sachivalaya</option>
+                                                                       <option value="5">Singar Nagar</option>
+                                                                       <option value="3">Transport Nagar</option>
+                                                                       <option value="15">Vishvavidyalay Metro</option>
+                                                                   </select>
+               </div>
+               
+                <p><img alt="LMRCfare info" style="z-index: 0" src="https://lmrcl.com/front-end/img/switch.png" id="swap"></p>
+                
+                 
+
+                
+                 <p style="margin-top:15px; position: relative; ">To               
+                 <span style="position: absolute;right:40px;   font-size: 12px; color: #ff0000; font-style: italic; display: none; top:0px; z-index: 0  " id="toError">Please select destination station.</span>
+                 </p>
+               <div style="width:100%; margin-top: 10px" id="fareDivStation">
+               <span style="background:#ff0000; width:10px; height:10px; position:absolute; top:218px; left:38px; padding-top: 10px"></span>
+
+               <select name="to" id="to" style="width:100%; padding:10px; padding-left:25px;   ">
+                   <option value="" style="display:none;">Select Destination *</option>
+                                                               <option value="6">Alambagh</option>
+                                                               <option value="7">Alambagh Bus Stand</option>
+                                                               <option value="2">Amausi Metro</option>
+                                                               <option value="17">Badshah Nagar</option>
+                                                               <option value="19">Bhootnath Market</option>
+                                                               <option value="1">CCS Airport</option>
+                                                               <option value="10">Charbagh</option>
+                                                               <option value="9">Durga Puri</option>
+                                                               <option value="13">Hazratganj</option>
+                                                               <option value="11">Husainganj</option>
+                                                               <option value="20">Indira Nagar Metro</option>
+                                                               <option value="16">IT College</option>
+                                                               <option value="14">K D Singh Babu Stadium</option>
+                                                               <option value="4">Krishna Nagar Metro</option>
+                                                               <option value="18">Lekhraj Market</option>
+                                                               <option value="8">Mawaiya</option>
+                                                               <option value="21">Munsipuliya</option>
+                                                               <option value="12">Sachivalaya</option>
+                                                               <option value="5">Singar Nagar</option>
+                                                               <option value="3">Transport Nagar</option>
+                                                               <option value="15">Vishvavidyalay Metro</option>
+                                                           </select>
+               </div>
+               
+               <button type="button" onclick="getFare('https://lmrcl.com/');" style="background:#129404; margin-top:20px">Get Fare</button>
+       
+       </form>
+       
+     </div>
+    
+   </div>
+</body>
+</html>

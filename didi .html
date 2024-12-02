@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cab App Interface</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #0078ff;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+        .ride-options {
+            display: flex;
+            justify-content: space-around;
+            margin: 1rem 0;
+        }
+        .ride-option {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            flex: 1;
+            margin: 0 0.5rem;
+        }
+        .ride-option:hover {
+            border-color: #0078ff;
+            box-shadow: 0 0 10px rgba(0, 0, 255, 0.3);
+        }
+        .booking-form {
+            padding: 1rem;
+            background-color: #fff;
+            margin: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .booking-form input, .booking-form button {
+            width: 100%;
+            margin: 0.5rem 0;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .booking-form button {
+            background-color: #0078ff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .booking-form button:hover {
+            background-color: #005bb5;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cab Booking App</h1>
+    </header>
+    <div id="map"></div>
+    <div class="ride-options">
+        <div class="ride-option">
+            <h3>Economy</h3>
+            <p>Affordable rides</p>
+        </div>
+        <div class="ride-option">
+            <h3>Premium</h3>
+            <p>Luxury rides</p>
+        </div>
+        <div class="ride-option">
+            <h3>Shared</h3>
+            <p>Save more by sharing</p>
+        </div>
+    </div>
+    <div class="booking-form">
+        <input type="text" placeholder="Pickup Location" id="pickup">
+        <input type="text" placeholder="Drop Location" id="drop">
+        <button onclick="bookRide()">Book Ride</button>
+    </div>
+    <script>
+        // Initialize the map
+    const map = L.map('map').setView([26.8467, 80.9462], 13); // Lucknow coordinates, zoom level 13
+
+    // Add OpenStreetMap India tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.in/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles: <a href="https://openstreetmap.in/">OSM India</a>'
+    }).addTo(map);
+
+    // Add a marker for Lucknow
+    L.marker([26.8467, 80.9462]).addTo(map)
+      .bindPopup('Lucknow, India')
+      .openPopup();
+  </script>
+  <script>
+        function bookRide() {
+            const pickup = document.getElementById('pickup').value;
+            const drop = document.getElementById('drop').value;
+            if (pickup && drop) {
+                alert(`Ride booked from ${pickup} to ${drop}`);
+            } else {
+                alert('Please enter both pickup and drop locations');
+            }
+        }
+    </script>
+</body>
+</html>

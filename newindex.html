@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ffa034;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color:#ffa034;
+            padding: 0.5rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.1rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 2rem;
+        }
+        .product-card {
+            border: 1px solid #ffa034;
+            border-radius: 5px;
+            padding: 1rem;
+            text-align: center;
+            background: #f9f9f9;
+        }
+        .product-card img {
+            max-width: 100%;
+            height: 100px;
+            margin-bottom: 1rem;
+        }
+        #map {
+            height: 25vh;
+            width: 100%;
+        }
+        footer {
+            background-color:#ffa034;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #ffa034;
+            color: white;
+            padding: 15px 20px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .cookie-banner .message {
+            font-size: 1rem;
+            margin-right: 20px;
+            flex: 1;
+        }
+        .cookie-banner .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .cookie-banner button {
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .cookie-banner .accept {
+            background-color: #00c853;
+            color: white;
+        }
+        .cookie-banner .accept:hover {
+            background-color: #009624;
+        }
+        .cookie-banner .decline {
+            background-color: #f44336;
+            color: white;
+        }
+        .cookie-banner .decline:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to meMETO </h1>
+        <p>Your one-stop web for everything!</p>
+    </header>
+    <nav>
+        <a href="newindex.html">Home</a>
+        <a href="#">MODES OF TRAVEL</a>
+        <a href="about us.html">About Us</a>
+        <a href="CONTACTUS.HTML">Contact</a>
+    </nav>
+    <main>
+        <section class="products">
+            <div class="product-card">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/037/224/149/small_2x/ai-generated-cute-maglev-in-cartoon-style-png.png" alt="Product 1">
+                <h3>METRO </h3>
+                <p>RS 8.00 PER KM</p>
+                <a href="FARE CALCULATOR.HTML"><button> BOOK NOW </button></a>
+            </div>
+            <div class="product-card">
+                <img src="https://png.pngtree.com/png-vector/20240612/ourmid/pngtree-electric-bus-with-charging-station-concept-png-image_12713688.png" alt="Product 2">
+                <h3> BUS </h3>
+                <p>RS 5 PER KM</p>
+                <A HREF="https://chalo.com/lucknow"><button>BOOK NOW</button></div></A>
+            </div>
+            <div class="product-card">
+                <img src="https://content.jdmagicbox.com/comp/darbhanga/g3/9999p6272.6272.210905220708.e3g3/catalogue/ugna-cab-ranipur-darbhanga-taxi-services-1p29vj2mqn.jpg" alt="Product 3">
+                <h3>CAB</h3>
+                <p>RS 10.00 PER KM </p>
+                <A HREF="didi .html"><button>BOOK NOW </button></A>
+            </div>
+            <div class="product-card">
+                <img src="https://cmv360.s3.ap-southeast-1.amazonaws.com/TVS_Deluxe_King_21b5f73094.png" alt="Product 4">
+                <h3>AUTO</h3>
+                <p>RS 5 PER KM</p>
+                <a href="booking.html" > <button> BOOK NOW</button></a>
+            </div>
+            <div class="product-card">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/024/830/446/small_2x/delivery-truck-with-parcel-box-transport-vehicle-3d-rendering-free-png.png" alt="Product 5">
+                <h3>DELIVERY</h3>
+                <p>RS 15 PER KM</p>
+                <a href="booking.html"><button>BOOK NOW</button></a>
+            </div>
+            <div class="product-card">
+                <img src="https://pathao.com/wp-content/uploads/2018/12/ic_bike_feature_3.png" alt="Product 6">
+                <h3>Bike sharing</h3>
+                <p>RS 5 PER KM</p>
+                <a href="booking.html" > <button>BOOK NOW</button></a>
+            </div>
+        </section>
+    </main>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>OpenStreetMap India - Lucknow</title>
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<div id="map"></div>
+    
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+      <script>
+        // Initialize the map
+        const map = L.map('map').setView([20.5937, 78.9629], 5); // Lucknow coordinates, zoom level 13
+    
+        // Add OpenStreetMap India tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.in/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles: <a href="https://openstreetmap.in/">OSM India</a>'
+        }).addTo(map);
+      </script>
+ 
+
+    
+    <footer>
+        <p>&copy; 2024 meMETO. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

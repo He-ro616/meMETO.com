@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin: 1rem 0 0.5rem;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .total-cost {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Book Your Tickets</h1>
+        <form id="bookingForm">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            
+            <label for="ticketType">Ticket Type</label>
+            <select id="ticketType" name="ticketType">
+                <option value="standard" data-price="10">Standard - $10</option>
+                <option value="premium" data-price="20">Premium - $20</option>
+                <option value="vip" data-price="50">VIP - $50</option>
+            </select>
+            
+            <label for="quantity">Number of Tickets</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required>
+            
+            <button type="button" onclick="calculateTotal()">Calculate Total</button>
+        </form>
+        <div class="total-cost" id="totalCost"></div>
+    </div>
+
+    <script>
+        function calculateTotal() {
+            const ticketType = document.getElementById('ticketType');
+            const quantity = parseInt(document.getElementById('quantity').value);
+            const selectedOption = ticketType.options[ticketType.selectedIndex];
+            const ticketPrice = parseInt(selectedOption.getAttribute('data-price'));
+            
+            if (!quantity || quantity < 1) {
+                alert('Please enter a valid number of tickets.');
+                return;
+            }
+            
+            const totalCost = ticketPrice * quantity;
+            document.getElementById('totalCost').textContent = 
+                `Total Cost: $${totalCost}`;
+        }
+    </script>
+</body>
+</html>

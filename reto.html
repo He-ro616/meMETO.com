@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamTube</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        /* Navbar styles */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #1a1a1a;
+            color: white;
+            padding: 10px 20px;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            margin: 0 10px;
+        }
+        .navbar input[type="search"] {
+            padding: 5px;
+            font-size: 14px;
+        }
+        .content {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .video-card {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .video-card:hover {
+            transform: scale(1.05);
+        }
+        .video-card img {
+            width: 100%;
+            height: auto;
+        }
+        .video-info {
+            padding: 10px;
+        }
+        .video-info h3 {
+            margin: 0 0 10px;
+            font-size: 16px;
+        }
+        .video-info p {
+            margin: 0;
+            font-size: 14px;
+            color: #666;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #1a1a1a;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div>
+            <a href="#">StreamTube</a>
+        </div>
+        <div>
+            <input type="search" placeholder="Search">
+        </div>
+        <div>
+            <a href="#">Sign In</a>
+            <a href="#">Sign Up</a>
+        </div>
+    </div>
+    
+    <!-- Content Section -->
+    <div class="content">
+        <!-- Video Card Example -->
+        <div class="video-card">
+            <img src="https://via.placeholder.com/250x140" alt="Video Thumbnail">
+            <div class="video-info">
+                <h3>Sample Video Title</h3>
+                <p>Channel Name</p>
+                <p>1M views • 2 days ago</p>
+            </div>
+        </div>
+        <!-- Duplicate for multiple cards -->
+        <div class="video-card">
+            <img src="https://via.placeholder.com/250x140" alt="Video Thumbnail">
+            <div class="video-info">
+                <h3>Another Video</h3>
+                <p>Channel Name</p>
+                <p>500K views • 1 week ago</p>
+            </div>
+        </div>
+        <!-- Add more cards -->
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 StreamTube. All rights reserved.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<div class="cookie-banner" id="cookieBanner"></div>
+<div class="message">
+    We use cookies to improve your experience on our site. By continuing to use our website, you accept our use of cookies. 
+    <a href="#" style="color: #00bcd4; text-decoration: underline;">Learn More</a>
+</div>
+<div class="buttons">
+    <button class="accept" onclick="acceptCookies()">Accept</button>
+    <button class="decline" onclick="declineCookies()">Decline</button>
+</div>
+</div>
+
+<script>
+function acceptCookies() {
+    alert("Thank you for accepting cookies!");
+    document.getElementById("cookieBanner").style.display = "none";
+}
+
+function declineCookies() {
+    alert("You have declined cookies. Some features may not work as intended.");
+    document.getElementById("cookieBanner").style.display = "none";
+}
+</script>

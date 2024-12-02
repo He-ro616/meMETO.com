@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Gateway</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            background-color: #0070ba;
+            color: white;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005fa3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Complete Your Payment</h1>
+        <p>Click the button below to proceed to payment.</p>
+        <button onclick="redirectToPayment()">Pay with PayPal</button>
+    </div>
+
+    <script>
+        function redirectToPayment() {
+            // Example parameters for PayPal redirection
+            const businessEmail = "your-business-email@example.com"; // Replace with your PayPal business email
+            const itemName = "Premium Subscription"; // Replace with your item name
+            const amount = "20.00"; // Replace with your price
+            const currency = "USD";
+
+            // Construct the PayPal payment URL
+            const paypalUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=${businessEmail}&item_name=${itemName}&amount=${amount}&currency_code=${currency}`;
+
+            // Redirect to PayPal
+            window.location.href = paypalUrl;
+        }
+    </script>
+</body>
+</html>

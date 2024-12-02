@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paytm Payment Gateway</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        button {
+            background-color: #00bfff;
+            color: white;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0077aa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Paytm Payment Gateway</h1>
+        <p>Click the button below to make a payment</p>
+        <button onclick="makePayment()">Pay Now</button>
+    </div>
+
+    <script>
+        async function makePayment() {
+            // Replace this URL with your server-side endpoint to generate the transaction token
+            const serverEndpoint = "https://your-server-endpoint.com/generateToken";
+
+            // Transaction details (Customize based on your requirement)
+            const paymentDetails = {
+                orderId: "ORDER12345", // Unique order ID
+                customerId: "CUST12345", // Unique customer ID
+                amount: "500.00" // Transaction amount
+            };
+
+            try {
+                // Make a POST request to the server to generate a transaction token
+                const response = await fetch(serverEndpoint, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(paymentDetails)
+                });
+
+                const data = await response.json();
+                if (data.txnToken) {
+                    // Redirect to Paytm payment page
+                    const paytmUrl = `https://securegw.paytm.in/theia/processTransaction?mid=${data.mid}&orderId=${paymentDetails.orderId}&txnToken=${data.txnToken}`;
+                    window.location.href = paytmUrl;
+                } else {
+                    alert("Failed to generate transaction token.");
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("An error occurred. Please try again.");
+            }
+        }
+    </script>
+</body>
+</html>
